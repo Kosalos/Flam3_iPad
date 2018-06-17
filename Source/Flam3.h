@@ -7,6 +7,8 @@ typedef struct {
     float xT,yT;
     float xS,yS;
     float rot;
+    int colorIndex;
+    vector_float3 color;
     float unused[4];
 } Function;
 
@@ -44,11 +46,14 @@ int getGroupActive(int index);
 
 float* groupWtPointer(int index);
 void updateGroupRGB(int gIndex, int colorIndex);
+void updateFunctionRGB(int gIndex, int fIndex, int colorIndex);
 void rgbForIndex(int index,float *r,float *g,float *b);
 
 int* groupColorIndexPointer(int index);
 int  groupColorIndex(int index);
-void setGroupColorValue(int gIndex,int colorIndex,float value);
+
+int* functionColorIndexPointer(int gIndex,int fIndex);
+int  functionColorIndex(int gIndex,int fIndex);
 
 int* funcIndexPointer(int gIndex,int fIndex);
 int funcIndex(int gIndex,int fIndex);

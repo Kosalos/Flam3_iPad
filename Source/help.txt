@@ -40,7 +40,7 @@ B. (W)eight   (read about weighted random selection below)
    The weight of this group when deciding which group to select a function from.
 
 C. Color
-   All points produced by the functions is this group will be drawn in this color.
+   All points produced by this function will be drawn in this color.
    Tap this button to launch the color picker dialog.
 
 D. Functions

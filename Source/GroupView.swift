@@ -29,14 +29,30 @@ class GroupView : UIView {
         return btn
     }()
 
-    let colorButton: UIButton = {
+    let colorButton1: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("", for: .normal)
         btn.backgroundColor = .darkGray
-        btn.addTarget(self, action: #selector(colorTapped), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(colorTapped1), for: .touchUpInside)
         return btn
     }()
     
+    let colorButton2: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("", for: .normal)
+        btn.backgroundColor = .darkGray
+        btn.addTarget(self, action: #selector(colorTapped2), for: .touchUpInside)
+        return btn
+    }()
+    
+    let colorButton3: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("", for: .normal)
+        btn.backgroundColor = .darkGray
+        btn.addTarget(self, action: #selector(colorTapped3), for: .touchUpInside)
+        return btn
+    }()
+
     let functionName1: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitleColor(.white, for: .normal)
@@ -82,14 +98,12 @@ class GroupView : UIView {
         }
 
         addSubview(activeButton)
-        addSubview(colorButton)
+        addSubview(colorButton1)
+        addSubview(colorButton2)
+        addSubview(colorButton3)
         addSubview(functionName1)
         addSubview(functionName2)
         addSubview(functionName3)
-
-        functionName1.setTitle("FunctionName", for: .normal)
-        functionName2.setTitle("FunctionName", for: .normal)
-        functionName3.setTitle("FunctionName", for: .normal)
 
         // ----------------------------------------------------------
         setControlPointer(&control);
@@ -135,22 +149,24 @@ class GroupView : UIView {
         x = 5
         y = 5
         activeButton.frame = frame(60,sHeight,70,0)
+        colorButton1.frame = frame(30,sHeight,40,0)
         functionName1.frame = frame(fnWidth,sHeight,fnWidth+5,0)
         w1.frame = frame(sWidth,sHeight,sGap,0)
         let q1 = [ t1,s1,r1 ]
         for q in q1 { q.frame = frame(sWidth,sHeight,sGap,0) }
+        
         x = 5
         y += 40
-        
         wt.frame = frame(60,sHeight,70,0)
+        colorButton2.frame = frame(30,sHeight,40,0)
         functionName2.frame = frame(fnWidth,sHeight,fnWidth+5,0)
         w2.frame = frame(sWidth,sHeight,sGap,0)
         let q2 = [ t2,s2,r2 ]
         for q in q2 { q.frame = frame(sWidth,sHeight,sGap,0) }
-        x = 5
-        y += 40
         
-        colorButton.frame = frame(60,sHeight,70,0)
+        x = 75
+        y += 40
+        colorButton3.frame = frame(30,sHeight,40,0)
         functionName3.frame = frame(fnWidth,sHeight,fnWidth+5,0)
         w3.frame = frame(sWidth,sHeight,sGap,0)
         let q3 = [ t3,s3,r3 ]
@@ -171,14 +187,17 @@ class GroupView : UIView {
 
     func controlLoaded() {
         setActiveButtonColor()
-        functionName1.setTitle(varisNames[Int(funcIndex(index,0))], for: .normal)
-        functionName2.setTitle(varisNames[Int(funcIndex(index,1))], for: .normal)
-        functionName3.setTitle(varisNames[Int(funcIndex(index,2))], for: .normal)
-
-        let colorIndex = Int(groupColorIndex(index))
-        colorButton.backgroundColor = uiColorFromIndex(colorIndex)
-        updateGroupRGB(index,Int32(colorIndex))
+        let fn = [ functionName1,functionName2,functionName3 ]
+        let cb = [ colorButton1,colorButton2,colorButton3 ]
         
+        for i in 0 ..< 3 {
+            fn[i].setTitle(varisNames[Int(funcIndex(index,Int32(i)))], for: .normal)
+
+            let ci = Int(functionColorIndex(index,Int32(i)))
+            cb[i].backgroundColor = uiColorFromIndex(ci)
+            updateFunctionRGB(index,Int32(i),Int32(ci))
+        }
+
         for s in sList { s.setNeedsDisplay() }
         for d in dList { d.setNeedsDisplay() }
     }
@@ -187,7 +206,9 @@ class GroupView : UIView {
     @objc func functionName2Tapped() { vc.launchFunctionIndexPopover(functionName2,funcIndexPointer(index,1)) }
     @objc func functionName3Tapped() { vc.launchFunctionIndexPopover(functionName3,funcIndexPointer(index,2)) }
 
-    @objc func colorTapped() { vc.launchColorPopover(Int(index),colorButton,groupColorIndexPointer(index)) }
+    @objc func colorTapped1() { vc.launchColorPopover(Int(index),0,colorButton1,functionColorIndexPointer(index,0)) }
+    @objc func colorTapped2() { vc.launchColorPopover(Int(index),1,colorButton2,functionColorIndexPointer(index,1)) }
+    @objc func colorTapped3() { vc.launchColorPopover(Int(index),2,colorButton3,functionColorIndexPointer(index,2)) }
 
     override func draw(_ rect: CGRect) {
         UIColor(red:0.15, green:0.15, blue:0.15, alpha:1).setFill()

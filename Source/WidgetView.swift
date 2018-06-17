@@ -44,7 +44,7 @@ class WidgetView : UIView {
         
         x = 5
         y += 32
-        let gWidth:CGFloat = 370
+        let gWidth:CGFloat = 410
         let gHeight:CGFloat = 120
         for g in gList { g.frame = frame(gWidth,gHeight,0,gHeight+5) }
     }

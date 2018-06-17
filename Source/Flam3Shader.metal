@@ -328,7 +328,7 @@ kernel void Flam3Shader
                 p.x = uint(xx);
                 p.y = uint(yy);
                 
-                float4 color = float4(control.group[gIndex].color,1);
+                float4 color = float4(control.group[gIndex].function[fIndex].color,1);
                 dst.write(color,p);
             }
         }

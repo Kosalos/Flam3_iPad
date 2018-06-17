@@ -43,7 +43,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     
     func startUpdate(_ clearScreen:Bool = true) {
         control.yscale = control.xscale * control.ratio
-        updateCounter = 120
+        updateCounter = 500
         if clearScreen { clear() }
     }
     
@@ -52,7 +52,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
             startUpdate()
         }
         
-        if updateCounter > 0 {
+        if updateCounter > 0 {  // each update adds 200 points to drawing
             updateCounter -= 1
             flam3View.updateImage()
         }
@@ -109,10 +109,11 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
         startUpdate()
     }
     
-    func launchColorPopover(_ nGroupIndex:Int, _ b:UIButton, _ v:UnsafeMutableRawPointer) {
+    func launchColorPopover(_ nGroupIndex:Int, _ nFunctionIndex:Int, _ b:UIButton, _ v:UnsafeMutableRawPointer) {
         bPtr = b
         indexPointer = v
         groupIndex = nGroupIndex
+        functionIndex = nFunctionIndex
         colorIndex = Int(indexPointer.load(as: Int32.self))
         performSegue(withIdentifier: "ColorSegue", sender: self)
     }
@@ -120,7 +121,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     func colorChanged() {
         indexPointer.storeBytes(of:Int32(colorIndex), as:Int32.self)
         bPtr.backgroundColor = uiColorFromIndex(colorIndex)
-        updateGroupRGB(Int32(groupIndex),Int32(colorIndex))
+        updateFunctionRGB(Int32(groupIndex),Int32(functionIndex),Int32(colorIndex))
         startUpdate()
     }
     
@@ -136,7 +137,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
         
         control.ratio = Float(wxs) / Float(wys) // used when stretching drawing to fit UIImageView
         
-        let wWidth:CGFloat = 380
+        let wWidth:CGFloat = 420
         let wHeight:CGFloat = 408
         
         flam3View.frame = CGRect(x:0, y:0, width:wxs, height:wys)
@@ -163,6 +164,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     @IBAction func pinchGesture(_ sender: UIPinchGestureRecognizer) {
         if sender.state == .began {
             startPinch = control.xscale
+            stopAllDeltas()
         }
         if sender.state == .ended {
             startUpdate()

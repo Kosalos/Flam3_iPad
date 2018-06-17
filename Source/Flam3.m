@@ -26,6 +26,7 @@ void controlReset(void) {
             f->rot = 0;
             f->xS = 1;
             f->yS = 1;
+            f->colorIndex = 16 + j * 40;
         }
     }
 }
@@ -49,6 +50,7 @@ void controlRandom(void) {
             f->rot = rndF(2) - 1;
             f->xS = 0.7 + rndF(0.6);
             f->yS = 0.7 + rndF(0.6);
+            f->colorIndex = rndI(150);
         }
     }
 }
@@ -59,8 +61,8 @@ void controlDebug(void) {
         printf("\n\n=============================\nGrp %d, Act %d, Wt %8.5f Color %d [%8.5f,%8.5f,%8.5f] \n",g+1,gg->active,gg->weight,gg->colorIndex,gg->color.x,gg->color.y,gg->color.z);
         for(int ff=0;ff<3;++ff) {
             Function *f = &(gg->function[ff]);
-            printf("   F %d, Ind %d, Wt %8.5f  T %8.5f %8.5f  S %8.5f %8.5f  R %8.5f\n",ff+1,
-                   f->index,f->weight,f->xT,f->yT,f->xS,f->yS,f->rot);
+            printf("   F %d, Ind %d, CI %3d Wt %8.5f  T %8.5f %8.5f  S %8.5f %8.5f  R %8.5f\n",ff+1,
+                   f->index,f->colorIndex,f->weight,f->xT,f->yT,f->xS,f->yS,f->rot);
         }
     }
 }
@@ -75,18 +77,11 @@ float* groupWtPointer(int index) {
 
 //MARK: -
 
-void updateGroupRGB(int gIndex, int colorIndex);
-
 int* groupColorIndexPointer(int index) { return &(cPtr->group[index].colorIndex); }
 int  groupColorIndex(int index) { return cPtr->group[index].colorIndex; }
 
-void setGroupColorValue(int gIndex,int colorIndex,float value) {
-    switch(colorIndex) {
-        case 0 : cPtr->group[gIndex].color.x = value; break;
-        case 1 : cPtr->group[gIndex].color.y = value; break;
-        case 2 : cPtr->group[gIndex].color.z = value; break;
-    }
-}
+int* functionColorIndexPointer(int gIndex,int fIndex) { return &(cPtr->group[gIndex].function[fIndex].colorIndex); }
+int  functionColorIndex(int gIndex,int fIndex) { return cPtr->group[gIndex].function[fIndex].colorIndex; }
 
 void rgbForIndex(int index,float *r,float *g,float *b)
 {
@@ -115,6 +110,17 @@ void updateGroupRGB(int gIndex,int colorIndex) {
     cPtr->group[gIndex].color.z = r;
     cPtr->group[gIndex].color.y = g;
     cPtr->group[gIndex].color.x = b;
+}
+
+void updateFunctionRGB(int gIndex, int fIndex, int colorIndex) {
+    float r,g,b;
+    
+    cPtr->group[gIndex].function[fIndex].colorIndex = colorIndex;
+    rgbForIndex(colorIndex,&r,&g,&b);
+    
+    cPtr->group[gIndex].function[fIndex].color.z = r;
+    cPtr->group[gIndex].function[fIndex].color.y = g;
+    cPtr->group[gIndex].function[fIndex].color.x = b;
 }
 
 //MARK: -
