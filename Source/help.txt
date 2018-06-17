@@ -1,0 +1,78 @@
+Flam3
+
+I have done IFS apps in the past, but never quite like this.
+What makes Flam3 special is it's collection of algorithms.
+
+Please visit:
+http://flam3.com/
+https://github.com/tariqksoliman/Fractal-Inferno
+
+IFS = Iterated Function System.
+1 Start with a blank screen, and a single randommly positioned point.
+2 Randommly select one of the functions,
+  and run the point's coordinates through it.
+  The result becomes the new point position.
+3 Draw that point on the screen.
+4 goto back to step 2 thousands of times..
+
+All the slider boxes work the same way:
+* Press and hold to either side of center to affect
+  parameter(s) in specified direction and speed.
+* Double Tap to toggle Fast versus Slow editing.
+  (Red vs Green background color)
+* Triple tap to reset parameter(s).
+
+Note: Single tap on any widget to give it the FOCUS.
+      It will gain a red colored border.
+      Click and drag on the image to apply the movement to the widget.
+      The widgets' Fast vs Slow edit style affects the movements.
+
+Note: Pinch the image for zoom.
+Note: Double tap the image to show/hide the widgets.
+
+There are three widget Groups, and each group has three functions.
+The image above shows just one Group (all three work the same way).
+
+A. Active
+   Toggles whether this group of functions participate in the drawing.
+
+B. (W)eight   (read about weighted random selection below)
+   The weight of this group when deciding which group to select a function from.
+
+C. Color
+   All points produced by the functions is this group will be drawn in this color.
+   Tap this button to launch the color picker dialog.
+
+D. Functions
+   Each Group manages three functions.
+   Tap a name to launch the function selection dialog.
+
+E. Parameters for each function
+   (W)eight     weight of this function when deciding which function to select.
+
+   These following controls alter the point position after each itertion of the render:
+   (T)ranslate  point position is moved X/Y by the amount specified here.
+   (S)cale      point distance from center is scaled X/Y by the amount specified here.
+   (R)otate     position point is rotated around center by the amount specified here.
+
+F. Launch the Save / Load dialog.
+
+----------------
+Weighted Random Selection
+The three groups each have a weight that is used when
+deciding which group to select.
+
+Let's say for example the weights are  1,3,6.
+The total of the weights is 10, and so a random number from 1 to 10 is chosen.
+If "1"     is chosen then group1 is picked.  (chosen <= group1 weight)
+If "2..4"  is chosen then group2 is picked.  (chosen <= group1+group2 weight)
+otherwise, group3 is picked ( "5..10")
+So, group1 is selected 10% of the time, group2 30%, and group3 60%.
+
+Let's say for example the weights are  4,0,3.
+group1 is selected 57% of the time (4 divided by 7)
+group2 is never selected
+group3 is selected 43% of the time (3 divided by 7)
+
+Within a Group, the three functions battle it out the same way every iteration.
+

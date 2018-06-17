@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Color Picker View Controller-->
+        <scene sceneID="xl3-AJ-pqs">
+            <objects>
+                <viewController id="Zst-kO-6a3" customClass="ColorPickerViewController" customModule="Flam3_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ok-QC-V8h" customClass="ColorPickerView" customModule="Flam3_iPad" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="420"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="Ssk-el-jIu"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="180" height="420"/>
+                    <size key="freeformSize" width="180" height="420"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXU-ra-zGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-989" y="-367"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Flam3_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="Background" customModule="Flam3_iPad" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHO-FH-VpP" customClass="Flam3View" customModule="Flam3_iPad" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="368" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.37119289341370565" green="0.2385798435436243" blue="0.01817697208308398" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mbq-p2-PWB" appends="YES" id="eu0-uk-8fL"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcA-52-w0A" customClass="WidgetView" customModule="Flam3_iPad" customModuleProvider="target">
+                                <rect key="frame" x="20" y="356" width="368" height="265"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97y-Gi-2zy">
+                                        <rect key="frame" x="73" y="48" width="72" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save/Load"/>
+                                        <connections>
+                                            <segue destination="H1L-uJ-nhp" kind="popoverPresentation" popoverAnchorView="97y-Gi-2zy" id="RUh-yR-uqa">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMe-Qa-p5X">
+                                        <rect key="frame" x="73" y="83" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="xNq-7H-EXO" kind="popoverPresentation" popoverAnchorView="mMe-Qa-p5X" id="WMy-iT-yCB">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMs-1K-6QX">
+                                        <rect key="frame" x="73" y="122" width="57" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Random"/>
+                                        <connections>
+                                            <action selector="randomPressed:" destination="lcA-52-w0A" eventType="touchUpInside" id="7ic-q7-SRL"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-dN-aEv" customClass="GroupView" customModule="Flam3_iPad" customModuleProvider="target">
+                                        <rect key="frame" x="231" y="18" width="90" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tuq-e6-qJL" customClass="GroupView" customModule="Flam3_iPad" customModuleProvider="target">
+                                        <rect key="frame" x="231" y="76" width="90" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYC-jy-lQe" customClass="GroupView" customModule="Flam3_iPad" customModuleProvider="target">
+                                        <rect key="frame" x="231" y="134" width="90" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMu-0b-2tU">
+                                        <rect key="frame" x="73" y="169" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetPressed:" destination="lcA-52-w0A" eventType="touchUpInside" id="dbj-1G-4vs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.070750191810000002" green="0.2024126202" blue="0.40010443330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="g1" destination="KlN-dN-aEv" id="NC5-3b-01d"/>
+                                    <outlet property="g2" destination="tuq-e6-qJL" id="Dea-Sf-yW3"/>
+                                    <outlet property="g3" destination="AYC-jy-lQe" id="Ezs-YC-s3i"/>
+                                    <outlet property="helpButton" destination="mMe-Qa-p5X" id="osF-Oa-eZF"/>
+                                    <outlet property="randomButton" destination="UMs-1K-6QX" id="6g2-bh-ZUk"/>
+                                    <outlet property="resetButton" destination="HMu-0b-2tU" id="pQY-hK-2CD"/>
+                                    <outlet property="saveLoadButton" destination="97y-Gi-2zy" id="Xj7-FN-BAr"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="flam3View" destination="UHO-FH-VpP" id="ZJi-ad-zoY"/>
+                        <outlet property="widgetView" destination="lcA-52-w0A" id="d6e-eA-cUH"/>
+                        <segue destination="q5a-WI-FNi" kind="popoverPresentation" identifier="FListSegue" popoverAnchorView="tuq-e6-qJL" id="lzf-ZM-Jbm">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="Zst-kO-6a3" kind="popoverPresentation" identifier="ColorSegue" popoverAnchorView="tuq-e6-qJL" id="aHB-GV-8v1">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="mbq-p2-PWB">
+                    <connections>
+                        <action selector="pinchGesture:" destination="BYZ-38-t0r" id="LO7-Lu-rMb"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1701.4388489208634" y="-69.064748201438846"/>
+        </scene>
+        <!--Function List View Controller-->
+        <scene sceneID="qpe-mb-RQB">
+            <objects>
+                <viewController storyboardIdentifier="FList" id="q5a-WI-FNi" customClass="FunctionListViewController" customModule="Flam3_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jdh-Fp-yPN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAq-7X-YaD">
+                                <rect key="frame" x="16" y="20" width="285" height="560"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FLCell" textLabel="jCU-hO-hQV" rowHeight="25" style="IBUITableViewCellStyleDefault" id="37c-9E-k0j" userLabel="FLCell">
+                                        <rect key="frame" x="0.0" y="28" width="285" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="37c-9E-k0j" id="pNd-GF-lix">
+                                            <rect key="frame" x="0.0" y="0.0" width="285" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jCU-hO-hQV">
+                                                    <rect key="frame" x="15" y="0.0" width="255" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MBw-iO-t5q"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="600"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="HAq-7X-YaD" id="Xfv-qh-my2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHu-HL-IiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1024" y="186"/>
+        </scene>
+        <!--SaveLoadVC-->
+        <scene sceneID="k5d-oy-Wjv">
+            <objects>
+                <viewController title="KeypadVC" id="H1L-uJ-nhp" userLabel="SaveLoadVC" customClass="SaveLoadViewController" customModule="Flam3_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="urT-1w-odo"/>
+                        <viewControllerLayoutGuide type="bottom" id="MEq-eV-dgX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="left" id="9ER-zl-GwU">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aM3-LU-J5t">
+                                <rect key="frame" x="14" y="28" width="373" height="564"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SLCell" rowHeight="58" id="YoQ-BE-ibm" customClass="SaveLoadCell" customModule="Flam3_iPad" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="373" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YoQ-BE-ibm" id="JqM-7C-X85">
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="57.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xau-oU-OAU">
+                                                    <rect key="frame" x="2" y="3" width="287" height="46.5"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="287" id="ZRf-gE-ofc"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Load">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="YoQ-BE-ibm" eventType="touchUpInside" id="yUn-Qo-4r0"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyP-qf-dPq">
+                                                    <rect key="frame" x="297" y="3" width="68" height="46.5"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="hK8-Vs-Twp"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Save">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="YoQ-BE-ibm" eventType="touchUpInside" id="cfT-ts-Efh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <constraints>
+                                                <constraint firstItem="XyP-qf-dPq" firstAttribute="leading" secondItem="xau-oU-OAU" secondAttribute="trailing" constant="8" id="2Bf-nU-cTR"/>
+                                                <constraint firstItem="XyP-qf-dPq" firstAttribute="baseline" secondItem="xau-oU-OAU" secondAttribute="firstBaseline" id="51s-Oq-0i0"/>
+                                                <constraint firstItem="xau-oU-OAU" firstAttribute="leading" secondItem="JqM-7C-X85" secondAttribute="leadingMargin" constant="-6" id="83s-BR-mfy"/>
+                                                <constraint firstItem="xau-oU-OAU" firstAttribute="top" secondItem="XyP-qf-dPq" secondAttribute="top" id="Cfu-5G-OQW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XyP-qf-dPq" secondAttribute="trailing" id="Utw-Qn-knK"/>
+                                                <constraint firstItem="xau-oU-OAU" firstAttribute="bottom" secondItem="JqM-7C-X85" secondAttribute="bottomMargin" id="eKL-fV-zdu"/>
+                                                <constraint firstItem="xau-oU-OAU" firstAttribute="baseline" secondItem="XyP-qf-dPq" secondAttribute="firstBaseline" id="hxr-kC-KHG"/>
+                                                <constraint firstItem="xau-oU-OAU" firstAttribute="top" secondItem="JqM-7C-X85" secondAttribute="topMargin" constant="-5" id="iMd-WJ-FAG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="loadCell" destination="xau-oU-OAU" id="zOX-ep-fxE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aM3-LU-J5t" firstAttribute="leading" secondItem="VIm-0J-bDe" secondAttribute="leading" constant="14" id="Gfh-Mn-NYw"/>
+                            <constraint firstItem="VIm-0J-bDe" firstAttribute="top" secondItem="aM3-LU-J5t" secondAttribute="top" constant="-8" id="edB-o6-fcf"/>
+                            <constraint firstItem="VIm-0J-bDe" firstAttribute="trailing" secondItem="aM3-LU-J5t" secondAttribute="trailing" constant="13" id="r89-3e-O93"/>
+                            <constraint firstItem="VIm-0J-bDe" firstAttribute="bottom" secondItem="aM3-LU-J5t" secondAttribute="bottom" constant="8" id="yny-7n-uqa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VIm-0J-bDe"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="400" height="600"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                    <connections>
+                        <outlet property="tableView" destination="aM3-LU-J5t" id="vYi-U5-mJz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Vv-os-Krk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2183" y="179"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="W8E-U9-uE7">
+            <objects>
+                <viewController id="xNq-7H-EXO" customClass="HelpViewController" customModule="Flam3_iPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dlH-Uw-zdl"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZ9-a1-tGh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="left" id="8YS-xh-6fJ">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="Tin-2D-YyR">
+                                <rect key="frame" x="102" y="28" width="419" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="e8W-gU-8ha"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbJ-cj-6VK">
+                                <rect key="frame" x="21" y="191" width="599" height="389"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="nbJ-cj-6VK" firstAttribute="leading" secondItem="605-nX-iBO" secondAttribute="leading" constant="21" id="JO4-UT-p9F"/>
+                            <constraint firstItem="Tin-2D-YyR" firstAttribute="top" secondItem="605-nX-iBO" secondAttribute="top" constant="8" id="UHG-1F-jf4"/>
+                            <constraint firstItem="605-nX-iBO" firstAttribute="trailing" secondItem="nbJ-cj-6VK" secondAttribute="trailing" constant="20" id="bCM-gL-buO"/>
+                            <constraint firstItem="nbJ-cj-6VK" firstAttribute="top" secondItem="Tin-2D-YyR" secondAttribute="bottom" constant="8" id="e2O-Cw-E0d"/>
+                            <constraint firstItem="Tin-2D-YyR" firstAttribute="leading" secondItem="605-nX-iBO" secondAttribute="leading" constant="102" id="iXl-2D-vbo"/>
+                            <constraint firstItem="605-nX-iBO" firstAttribute="trailing" secondItem="Tin-2D-YyR" secondAttribute="trailing" constant="119" id="vEf-FD-apG"/>
+                            <constraint firstItem="605-nX-iBO" firstAttribute="bottom" secondItem="nbJ-cj-6VK" secondAttribute="bottom" constant="20" id="z9f-js-mJ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="605-nX-iBO"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="640" height="600"/>
+                    <size key="freeformSize" width="640" height="600"/>
+                    <connections>
+                        <outlet property="textView" destination="nbJ-cj-6VK" id="5Yn-kq-sJl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mA3-35-ZcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-861.15107913669067" y="-25.359712230215827"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="help" width="755" height="301"/>
+    </resources>
+</document>
