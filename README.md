@@ -4,8 +4,8 @@ Flam3 IFS System for iPad using Swift and Metal
 I have done IFS apps in the past, but never quite like this.
 What makes Flam3 special is it's collection of algorithms.
 
-Please visit:
-http://flam3.com/
+Please visit: \
+http://flam3.com/ \
 https://github.com/tariqksoliman/Fractal-Inferno
 
 IFS = Iterated Function System.
