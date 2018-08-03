@@ -30,7 +30,6 @@ class Flam3View: UIImageView
 
     func clearImage() {
         texture1 = texture(from: blankImage)
-        image = image(from: texture1)
     }
     
     //MARK: -

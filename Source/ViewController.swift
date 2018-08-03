@@ -138,7 +138,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
         control.ratio = Float(wxs) / Float(wys) // used when stretching drawing to fit UIImageView
         
         let wWidth:CGFloat = 420
-        let wHeight:CGFloat = 408
+        let wHeight:CGFloat = 450
         
         flam3View.frame = CGRect(x:0, y:0, width:wxs, height:wys)
         widgetView.frame = CGRect(x:10, y:wys-wHeight-10, width:wWidth, height:wHeight)

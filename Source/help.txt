@@ -57,6 +57,9 @@ E. Parameters for each function
 
 F. Launch the Save / Load dialog.
 
+Not shown:  Radial Sym
+   Slide widget value all the way to the left to disable this function.
+
 ----------------
 Weighted Random Selection
 The three groups each have a weight that is used when

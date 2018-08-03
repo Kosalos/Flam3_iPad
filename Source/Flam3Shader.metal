@@ -321,15 +321,39 @@ kernel void Flam3Shader
 
         // render
         if(iter > 10) {     // let the point settle down first
-            int xx = 512 + int(pt.x * control.xscale);
-            int yy = 512 + int(pt.y * control.yscale);
+            float xx = 512 + pt.x * control.xscale;
+            float yy = 512 + pt.y * control.yscale;
+            float4 color = float4(control.group[gIndex].function[fIndex].color,1);
+
             if(xx >= 0 && xx < 1024 && yy >= 0 && yy < 1024) {
                 uint2 p;
-                p.x = uint(xx);
-                p.y = uint(yy);
                 
-                float4 color = float4(control.group[gIndex].function[fIndex].color,1);
-                dst.write(color,p);
+                if(control.radialAngle < 0.01) {  // radial sym disabled
+                    p.x = uint(xx);
+                    p.y = uint(yy);
+                    dst.write(color,p);
+                }
+                else { // radial sym
+                    float dx = xx - 512;
+                    float dy = yy - 512;
+                    float angle = fabs(atan2(dy,dx));
+                    
+                    float dRatio = 0.01 + control.radialAngle;
+                    while(angle > dRatio/2) angle -= dRatio;
+                    
+                    float dist = sqrt(dx * dx + dy * dy);
+                    float offset = 0;
+                    
+                    for(;;) {
+                        p.x = uint(512 + cos(angle+offset) * dist);
+                        p.y = uint(512 + sin(angle+offset) * dist);
+                        dst.write(color,p);
+                        
+                        offset += control.radialAngle / 2;
+                        if(offset >= pi*2) break;
+                        angle = -angle;  // flip left/right so pie slices mate
+                    }
+                }
             }
         }
     }

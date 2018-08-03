@@ -47,7 +47,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcA-52-w0A" customClass="WidgetView" customModule="Flam3_iPad" customModuleProvider="target">
-                                <rect key="frame" x="20" y="356" width="368" height="265"/>
+                                <rect key="frame" x="20" y="356" width="368" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97y-Gi-2zy">
@@ -100,6 +100,11 @@
                                             <action selector="resetPressed:" destination="lcA-52-w0A" eventType="touchUpInside" id="dbj-1G-4vs"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKt-rZ-6Ba" customClass="SliderView" customModule="Flam3_iPad" customModuleProvider="target">
+                                        <rect key="frame" x="127" y="220" width="155" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.070750191810000002" green="0.2024126202" blue="0.40010443330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -107,6 +112,7 @@
                                     <outlet property="g2" destination="tuq-e6-qJL" id="Dea-Sf-yW3"/>
                                     <outlet property="g3" destination="AYC-jy-lQe" id="Ezs-YC-s3i"/>
                                     <outlet property="helpButton" destination="mMe-Qa-p5X" id="osF-Oa-eZF"/>
+                                    <outlet property="ra" destination="wKt-rZ-6Ba" id="vUh-ue-MQY"/>
                                     <outlet property="randomButton" destination="UMs-1K-6QX" id="6g2-bh-ZUk"/>
                                     <outlet property="resetButton" destination="HMu-0b-2tU" id="pQY-hK-2CD"/>
                                     <outlet property="saveLoadButton" destination="97y-Gi-2zy" id="Xj7-FN-BAr"/>
@@ -326,6 +332,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="help" width="755" height="301"/>
+        <image name="help" width="836" height="311"/>
     </resources>
 </document>

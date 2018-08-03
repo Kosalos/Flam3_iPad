@@ -29,7 +29,8 @@ typedef struct {
 
     Group group[3];
     
-    float unused[4];
+    float radialAngle;
+    float unused[3];
 } Control;
 
 // Swift access to arrays in Control

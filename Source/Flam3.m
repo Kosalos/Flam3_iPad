@@ -11,6 +11,8 @@ void setControlPointer(Control *ptr) { cPtr = ptr; }
 void controlReset(void) {
     int fIndex = 1;
     
+    cPtr->radialAngle = 0;
+    
     for(int i=0;i<3;++i) {
         Group *g = &(cPtr->group[i]);
         g->active = 1;

@@ -350,6 +350,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_FAST_MATH = YES;
+				MTL_OPTIMIZATION_LEVEL = 3;
 				PRODUCT_BUNDLE_IDENTIFIER = "Harry.com.Flam3-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
@@ -372,6 +374,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_FAST_MATH = YES;
+				MTL_OPTIMIZATION_LEVEL = 3;
 				PRODUCT_BUNDLE_IDENTIFIER = "Harry.com.Flam3-iPad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";

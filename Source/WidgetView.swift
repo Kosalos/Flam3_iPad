@@ -11,6 +11,7 @@ class WidgetView : UIView {
     @IBOutlet var g1: GroupView!
     @IBOutlet var g2: GroupView!
     @IBOutlet var g3: GroupView!
+    @IBOutlet var ra: SliderView!
 
     @IBAction func resetPressed(_ sender: UIButton) { vc.reset() }
     @IBAction func randomPressed(_ sender: UIButton) { vc.random() }
@@ -47,6 +48,10 @@ class WidgetView : UIView {
         let gWidth:CGFloat = 410
         let gHeight:CGFloat = 120
         for g in gList { g.frame = frame(gWidth,gHeight,0,gHeight+5) }
+        
+        ra.frame = frame(150,30,0,0)
+        ra.initializeFloat(&control.radialAngle,.delta,0,Float.pi/2,0.2,"Radial Sym")
+        globalSList.append(ra)
     }
     
     func controlLoaded() { for g in gList { g.controlLoaded() }}
